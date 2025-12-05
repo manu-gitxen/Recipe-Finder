@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>recipe finder</title>
+</head>
+<body>
+<header class="main-header">
+    <button id="filter-toggle" class="icon-btn">
+        <span class="bar">☰</span> </button>
+
+    <div class="search-bar-container">
+        <input type="text" id="searchInput" placeholder="Search for recipes...">
+        <button id="searchBtn">search</button>
+    </div>
+
+    <div class="logo">Daily Dish</div>
+</header>
+    <main class="app-container sidebar-hidden">
+        <aside class="sidebar">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                
+                <button class="filterbtn">Veg</button>
+                <button class="filterbtn">Non veg</button>
+                <button class="filterbtn">Chicken</button>
+                <button class="filterbtn">Bread</button>
+                <button class="filterbtn">Cake</button>
+                <button class="filterbtn">Pie</button>
+                <button class="filterbtn">Veg</button>
+                <button class="filterbtn">Non veg</button>
+                <button class="filterbtn">Chicken</button>
+                <button class="filterbtn">Bread</button>
+                <button class="filterbtn">Cake</button>
+                <button class="filterbtn">Pie</button>
+                <button class="filterbtn">+</button>
+            </div>
+        </aside>
+
+        <section class="content-area">
+            <h2>Recommended Recipes</h2>
+            <div id="recipe-container"></div>
+        </section>
+    </main>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="recipe-details-content"></div>
+        </div>
+    </div>
+
+    <script src="assets/script/script.js"></script>
+</body>
+</html>
