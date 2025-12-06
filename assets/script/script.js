@@ -50,7 +50,7 @@ searchInput.addEventListener('keypress', (e) => {
 filterToggleBtn.addEventListener('click',()=>{
 
     
-    // Write the toggle line here:
+    
     appContainer.classList.toggle('sidebar-hidden');
 
 });
@@ -75,7 +75,7 @@ async function openRecipeModal(id) {
     const data = await response.json();
     const meal = data.meals[0];
 
-    // 1. Create the HTML content
+    //HTML content
     recipeDetailsContent.innerHTML = `
         <h2 class="recipe-name">${meal.strMeal}</h2>
         <h3>Ingredients:</h3>
@@ -92,24 +92,24 @@ async function openRecipeModal(id) {
 
     recipeModal.style.display = "block";
 }
-// ... existing code ...
+
 
 recipeCloseBtn.addEventListener('click', () => {
     recipeModal.style.display = "none";
 });
 
 function addMealToDOM(recipe) {
-    // 1. Define the pairs (Background + Matching Button)
+    
     const themes = [
-        { bg: '#f8f9fa', btn: '#849aabff' }, // Gray -> Dark Gray
-        { bg: '#e9f7ef', btn: '#2ecc71' }, // Green -> Dark Green
-        { bg: '#fef9e7', btn: '#f1c40f' }, // Yellow -> Dark Yellow
-        { bg: '#ffd5cbff', btn: '#ff1900ff' }, // Pink -> Red
-        { bg: '#e8f8f5', btn: '#1abc9c' }, // Teal -> Dark Teal
-        { bg: '#f4ecf7', btn: '#9b59b6' }  // Purple -> Dark Purple
+        { bg: '#f8f9fa', btn: '#849aabff' },
+        { bg: '#e9f7ef', btn: '#2ecc71' },
+        { bg: '#fef9e7', btn: '#f1c40f' },
+        { bg: '#ffd5cbff', btn: '#ff1900ff' }, 
+        { bg: '#e8f8f5', btn: '#1abc9c' }, 
+        { bg: '#f4ecf7', btn: '#9b59b6' }  
     ];
 
-    // 2. Pick one random theme
+    // random theme
     const theme = themes[Math.floor(Math.random() * themes.length)];
 
 
@@ -123,7 +123,7 @@ function addMealToDOM(recipe) {
 
     recipeContainer.insertAdjacentHTML('beforeend', recipeCard);
 
-    // 4. Add the event listener
+    
     const btn = recipeContainer.querySelector(`[data-id="${recipe.idMeal}"]`);
     btn.addEventListener('click', (e) => {
         const mealId = e.target.dataset.id;
@@ -131,7 +131,7 @@ function addMealToDOM(recipe) {
     });
 }
 async function fetchFavMeals() {
-    recipeContainer.innerHTML = ''; // Clear container
+    recipeContainer.innerHTML = ''; 
 
     for (let i = 0; i < 8; i++) {
         await fetchRandomMeal();

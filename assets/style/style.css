@@ -184,7 +184,12 @@
     border-radius: 50px;
     font-family: 'Yellowtail';
     font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 1s;
 
+}
+.logo:hover{
+    background-color: #ddd;
 }
 
 .content-area h2{
