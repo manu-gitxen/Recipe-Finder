@@ -112,7 +112,7 @@ function addMealToDOM(recipe) {
     // 2. Pick one random theme
     const theme = themes[Math.floor(Math.random() * themes.length)];
 
-    // 3. Use theme.bg for the Card, and theme.btn for the Button
+
     const recipeCard = `
         <div class="card" style="background-color: ${theme.bg};">
             <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}">
