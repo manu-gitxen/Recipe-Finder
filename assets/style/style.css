@@ -60,6 +60,7 @@
     
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
     gap: 20px; 
+    padding: 20px;
     
 }
 
@@ -101,9 +102,9 @@
 }
 
 .sidebar {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     /* padding: 20px;  */
-    border-right: 1px solid #ddd; 
+    
 }
 
 .view-btn{
@@ -195,6 +196,7 @@
 .content-area h2{
     margin-left: 28px;
     color: rgb(29, 69, 100);
+    
 }
 
 .filterbtn{
