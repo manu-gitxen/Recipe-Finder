@@ -6,6 +6,7 @@ const recipeDetailsContent = document.getElementById('recipe-details-content');
 const recipeCloseBtn = document.querySelector('.close-btn');
 const filterToggleBtn = document.getElementById('filter-toggle');
 const appContainer = document.querySelector('.app-container');
+const filterBtns = document.querySelectorAll('.filterbtn');
 
 
 // const cardColors = [
@@ -133,7 +134,7 @@ function addMealToDOM(recipe) {
 async function fetchFavMeals() {
     recipeContainer.innerHTML = ''; 
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 10; i++) {
         await fetchRandomMeal();
     }
 }
@@ -145,3 +146,24 @@ async function fetchRandomMeal() {
     addMealToDOM(meal);
 }
 fetchFavMeals();
+async function filterByCategory(category) {
+    recipeContainer.innerHTML = "";
+    
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+    const data = await response.json();
+
+    if (data.meals) {
+        data.meals.forEach((meal) => {
+            addMealToDOM(meal);
+        });
+    }
+}
+    filterBtns.forEach((btn) => {
+    // Add the event listener here:
+    btn.addEventListener('click', () => {
+        const category = btn.innerText;
+        console.log(category)
+        filterByCategory(category);
+
+    });
+});

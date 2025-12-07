@@ -103,7 +103,7 @@
 
 .sidebar {
     background-color: #ffffff;
-    /* padding: 20px;  */
+    margin-left: 20px;
     
 }
 
@@ -206,7 +206,7 @@
     border: 2px solid green;
 
     border-radius: 5px;
-    background-color: rgb(255, 255, 254);
+    background-color: rgb(250, 255, 227);
     color: rgb(29, 69, 100);
     font-weight: 500;
     font-size: 11px;
