@@ -32,21 +32,21 @@ const searchText = document.getElementById('searchText');
 
 
 searchBtn.addEventListener('click', () => {
-    if (searchInput.value != ''){
-    const searchTerm = searchInput.value;
-    fetchRecipes(searchTerm);
-    console.log(searchTerm);
-    recomText.style.display = "none";
-     searchText.innerHTML = `<h2>Result For Your Search ' ${searchTerm}.. '</h2>`
-  
-    
+    if (searchInput.value != '') {
+        const searchTerm = searchInput.value;
+        fetchRecipes(searchTerm);
+        console.log(searchTerm);
+        recomText.style.display = "none";
+        searchText.innerHTML = `<h2>Result For Your Search ' ${searchTerm}.. '</h2>`
+
+
     }
 
 });
 
 
 searchInput.addEventListener('keypress', (e) => {
-    
+
     if (e.key === "Enter") {
         const searchTerm = searchInput.value;
         fetchRecipes(searchTerm);
@@ -55,10 +55,10 @@ searchInput.addEventListener('keypress', (e) => {
     }
 });
 
-filterToggleBtn.addEventListener('click',()=>{
+filterToggleBtn.addEventListener('click', () => {
 
-    
-    
+
+
     appContainer.classList.toggle('sidebar-hidden');
 
 });
@@ -74,7 +74,7 @@ async function fetchRecipes(query) {
     console.log(data);
 
     data.meals.forEach(recipe => {
-        
+
         addMealToDOM(recipe);
     });
 }
@@ -84,14 +84,41 @@ async function openRecipeModal(id) {
     const meal = data.meals[0];
 
     //HTML content
-    recipeDetailsContent.innerHTML = `
+    recipeDetailsContent.innerHTML = `<div>
         <h2 class="recipe-name">${meal.strMeal}</h2>
         <h3>Ingredients:</h3>
+        <div class ="ulFlex">
         <ul>
             <li>${meal.strIngredient1} - ${meal.strMeasure1}</li>
             <li>${meal.strIngredient2} - ${meal.strMeasure2}</li>
             <li>${meal.strIngredient3} - ${meal.strMeasure3}</li>
+            
         </ul>
+        <ul>
+            <li>${meal.strIngredient4} - ${meal.strMeasure4}</li>
+            <li>${meal.strIngredient5} - ${meal.strMeasure5}</li>
+            <li>${meal.strIngredient6} - ${meal.strMeasure6}</li>
+            
+        </ul>
+        <ul>
+            <li>${meal.strIngredient7} - ${meal.strMeasure7}</li>
+            <li>${meal.strIngredient8} - ${meal.strMeasure8}</li>
+            <li>${meal.strIngredient9} - ${meal.strMeasure9}</li>
+            
+        </ul>
+        <ul>
+            <li>${meal.strIngredient10} - ${meal.strMeasure10}</li>
+            <li>${meal.strIngredient12} - ${meal.strMeasure12}</li>
+            <li>${meal.strIngredient13} - ${meal.strMeasure13}</li>
+            
+        </ul>
+        <ul>
+            <li>${meal.strIngredient14} - ${meal.strMeasure14}</li>
+            <li>${meal.strIngredient15} - ${meal.strMeasure15}</li>
+            <li>${meal.strIngredient16} - ${meal.strMeasure16}</li>
+            
+        </ul>
+        </div>
         <div class="instructions">
             <h3>Instructions:</h3>
             <p>${meal.strInstructions}</p>
@@ -107,14 +134,14 @@ recipeCloseBtn.addEventListener('click', () => {
 });
 
 function addMealToDOM(recipe) {
-    
+
     const themes = [
         { bg: '#f8f9fa', btn: '#849aabff' },
         { bg: '#e9f7ef', btn: '#2ecc71' },
         { bg: '#fef9e7', btn: '#f1c40f' },
-        { bg: '#ffd5cbff', btn: '#ff1900ff' }, 
-        { bg: '#e8f8f5', btn: '#1abc9c' }, 
-        { bg: '#f4ecf7', btn: '#9b59b6' }  
+        { bg: '#ffd5cbff', btn: '#ff1900ff' },
+        { bg: '#e8f8f5', btn: '#1abc9c' },
+        { bg: '#f4ecf7', btn: '#9b59b6' }
     ];
 
     // random theme
@@ -131,15 +158,15 @@ function addMealToDOM(recipe) {
 
     recipeContainer.insertAdjacentHTML('beforeend', recipeCard);
 
-    
+
     const btn = recipeContainer.querySelector(`[data-id="${recipe.idMeal}"]`);
     btn.addEventListener('click', (e) => {
         const mealId = e.target.dataset.id;
-        openRecipeModal(mealId); 
+        openRecipeModal(mealId);
     });
 }
 async function fetchFavMeals() {
-    recipeContainer.innerHTML = ''; 
+    recipeContainer.innerHTML = '';
 
     for (let i = 0; i < 10; i++) {
         await fetchRandomMeal();
@@ -151,12 +178,12 @@ async function fetchRandomMeal() {
     const meal = data.meals[0];
 
     addMealToDOM(meal);
-   
+
 }
 fetchFavMeals();
 async function filterByCategory(category) {
     recipeContainer.innerHTML = "";
-    
+
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
     const data = await response.json();
 
@@ -166,7 +193,7 @@ async function filterByCategory(category) {
         });
     }
 }
-    filterBtns.forEach((btn) => {
+filterBtns.forEach((btn) => {
     // Add the event listener here:
     btn.addEventListener('click', () => {
         const category = btn.innerText;
