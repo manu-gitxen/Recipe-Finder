@@ -31,8 +31,8 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    max-height: 100vh;    /* Never taller than 80% of screen */
-    overflow-y: auto;    /* Scroll inside if content is long */
+    max-height: 100vh;    
+    overflow-y: auto;    
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     
 }
