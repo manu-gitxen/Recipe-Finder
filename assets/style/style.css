@@ -1,8 +1,6 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap');
 
-*{
+* {
     font-family: 'roboto';
 }
 
@@ -14,8 +12,8 @@
 
 
 .sidebar {
-    overflow: hidden; 
-  
+    overflow: hidden;
+
 }
 
 
@@ -25,14 +23,14 @@
 
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -57,44 +55,44 @@
 
 #recipe-container {
     display: grid;
-    
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 20px; 
+
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
     padding: 20px;
-    
+
 }
 
 
 
 .card {
     border-radius: 15px;
-    overflow: hidden; 
-    box-shadow: 0 5px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s; 
+    overflow: hidden;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
     padding: 12px;
 
 }
 
 
 .card img {
-    width: 100%;      
-    height: 200px;   
-    object-fit:cover;
-   
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
     border-radius: 15px;
-    
+
 }
 
 
 .app-container {
     display: grid;
-    grid-template-columns: 250px 1fr; 
+    grid-template-columns: 250px 1fr;
     height: 100vh;
 }
 
 .main-header {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     /* background-color: #ffffff; */
@@ -104,10 +102,24 @@
 .sidebar {
     background-color: #ffffff;
     margin-left: 20px;
-    
+    overflow: scroll;
+    height: 86dvh;
+    overflow-x: hidden;
+
+
 }
 
-.view-btn{
+.sidebar::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.view-btn {
     border: none;
     padding: 13px 15px;
     width: 100%;
@@ -117,100 +129,129 @@
     cursor: pointer;
     font-size: 1rem;
     font-weight: 900;
-    
+
 }
 
-.view-btn:hover{
+.view-btn:hover {
     opacity: 0.6;
 }
 
-.card-h3{
+.card-h3 {
     height: 35px;
     color: rgb(29, 69, 100);
     font-size: 1.4rem;
     text-align: center;
 }
 
-.icon-btn{
-    background: none;      
-    border: none;          
-    font-size: 24px;      
-    cursor: pointer;       
-    padding: 10px 20px;            
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 20px;
     margin-right: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     transition: background 1s;
 }
 
-.icon-btn:hover{
+.icon-btn:hover {
     background-color: #ddd;
 }
 
-#searchInput{
+#searchInput {
     width: 800px;
     height: 60px;
     border-radius: 50px;
-     box-shadow: 0 1px 5px 0px rgba(0,0,0,0.2); 
-     border: none;
-     padding-left: 10px;
-     font-size: 1rem;
-    
+    box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+    border: none;
+    padding-left: 10px;
+    font-size: 1rem;
+
 }
 
-#searchInput::placeholder{
+#searchInput::placeholder {
     padding-left: 10px;
 }
 
-#searchBtn{
+#searchBtn {
     border: none;
     font-size: 1rem;
     padding: 10px;
     height: 60px;
     width: 90px;
     border-radius: 50px;
-    box-shadow: 0 1px 5px 0px rgba(0,0,0,0.2); 
+    box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
     background-color: #f9f9f9;
     cursor: pointer;
     transition: background 1s;
     margin-left: 5px;
 }
-#searchBtn:hover{
+
+#searchBtn:hover {
     background-color: #ddd;
 }
 
-.logo{
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+.logo {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     padding: 20px 30px;
     border-radius: 50px;
     font-family: 'Yellowtail';
     font-size: 1.2rem;
     cursor: pointer;
-    transition: background 1s;
+    transition: background 0.5s, transform 1s;
+    user-select: none;
 
 }
-.logo:hover{
+
+.logo:hover {
+    background-color: #ddd;
+}
+.logo:active {
+    transform: scale(0.95);
     background-color: #ddd;
 }
 
-.content-area h2{
+.content-area h2 {
     margin-left: 28px;
     color: rgb(29, 69, 100);
-    
+
 }
 
-.filterbtn{
-    width: 57px;
-    height: 80px;
+.filterbtn {
+    
+    height: 50px;
     margin: 5px;
     border: 2px solid green;
-
     border-radius: 5px;
     background-color: rgb(250, 255, 227);
     color: rgb(29, 69, 100);
     font-weight: 500;
     font-size: 11px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    min-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+
 
 }
 
+.filterbtn:hover{
+    background-color: greenyellow;
+
+}
+.filterbtn:active {
+    transform: scale(0.95);
+    background-color: #c8e6c9;
+}
+.filterbtn:link{
+    background-color: aqua;
+}

@@ -7,6 +7,7 @@ const recipeCloseBtn = document.querySelector('.close-btn');
 const filterToggleBtn = document.getElementById('filter-toggle');
 const appContainer = document.querySelector('.app-container');
 const filterBtns = document.querySelectorAll('.filterbtn');
+const recomText = document.getElementById('recomText');
 
 
 // const cardColors = [
@@ -144,6 +145,7 @@ async function fetchRandomMeal() {
     const meal = data.meals[0];
 
     addMealToDOM(meal);
+    content
 }
 fetchFavMeals();
 async function filterByCategory(category) {
