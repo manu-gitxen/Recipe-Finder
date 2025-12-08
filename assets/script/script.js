@@ -8,6 +8,7 @@ const filterToggleBtn = document.getElementById('filter-toggle');
 const appContainer = document.querySelector('.app-container');
 const filterBtns = document.querySelectorAll('.filterbtn');
 const recomText = document.getElementById('recomText');
+const searchText = document.getElementById('searchText');
 
 
 // const cardColors = [
@@ -35,6 +36,9 @@ searchBtn.addEventListener('click', () => {
     const searchTerm = searchInput.value;
     fetchRecipes(searchTerm);
     console.log(searchTerm);
+    recomText.style.display = "none";
+     searchText.innerHTML = `<h2>Result For Your Search ' ${searchTerm}.. '</h2>`
+  
     
     }
 
@@ -46,6 +50,8 @@ searchInput.addEventListener('keypress', (e) => {
     if (e.key === "Enter") {
         const searchTerm = searchInput.value;
         fetchRecipes(searchTerm);
+        recomText.style.display = "none";
+        searchText.innerHTML = `<h2>Result For Your Search ' ${searchTerm}.. '</h2>`
     }
 });
 
