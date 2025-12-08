@@ -145,7 +145,7 @@ async function fetchRandomMeal() {
     const meal = data.meals[0];
 
     addMealToDOM(meal);
-    content
+   
 }
 fetchFavMeals();
 async function filterByCategory(category) {
