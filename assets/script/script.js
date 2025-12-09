@@ -194,7 +194,7 @@ async function filterByCategory(category) {
     }
 }
 filterBtns.forEach((btn) => {
-    // Add the event listener here:
+
     btn.addEventListener('click', () => {
         const category = btn.innerText;
         console.log(category)
