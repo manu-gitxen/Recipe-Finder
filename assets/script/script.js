@@ -83,13 +83,23 @@ async function openRecipeModal(id) {
     const data = await response.json();
     const meal = data.meals[0];
 
+
+    let ingredientsList ="";
+
+    for(let i = 1 ; i <= 20 ; i++){
+        const ingredient = meal[`strIngredient${i}`];
+        const measure = meal[`strMeasure${i}`]
+
+        
+        if (ingredient && ingredient.trim() !== "") {
+            ingredientsList += `<li>${measure} ${ingredient}</li>`;
+        }
+    }
+
     //HTML content
-    recipeDetailsContent.innerHTML = `<div>
-        <h2 class="recipe-name">${meal.strMeal}</h2>
-        <h3>Ingredients:</h3>
-        <div class ="ulFlex">
-        <ul>
-            <li>${meal.strIngredient1} - ${meal.strMeasure1}</li>
+    // ul list without the loop
+    
+/*<li>${meal.strIngredient1} - ${meal.strMeasure1}</li>
             <li>${meal.strIngredient2} - ${meal.strMeasure2}</li>
             <li>${meal.strIngredient3} - ${meal.strMeasure3}</li>
             
@@ -115,10 +125,19 @@ async function openRecipeModal(id) {
         <ul>
             <li>${meal.strIngredient14} - ${meal.strMeasure14}</li>
             <li>${meal.strIngredient15} - ${meal.strMeasure15}</li>
-            <li>${meal.strIngredient16} - ${meal.strMeasure16}</li>
+            <li>${meal.strIngredient16} - ${meal.strMeasure16}</li>  */
             
+
+
+
+recipeDetailsContent.innerHTML = `
+        <h2 class="recipe-name">${meal.strMeal}</h2>
+        
+        <h3>Ingredients:</h3>
+        <ul class="ulFlex">
+            ${ingredientsList}
         </ul>
-        </div>
+
         <div class="instructions">
             <h3>Instructions:</h3>
             <p>${meal.strInstructions}</p>
