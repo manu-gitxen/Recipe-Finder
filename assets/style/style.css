@@ -353,6 +353,21 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.filterbtn{
+    min-width: 20px;
+    font-size: 0.6rem;
+}
+.sidebar h2{
+    font-size: 1.2rem;
+}
+.filter-group h4{
+    font-size: 0.8rem;
+}
+
+#recomText{
+    font-size: 0.8rem;
+}
+
 }
 
 @media (max-width: 540px){
@@ -382,6 +397,43 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.app-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+}
+.sidebar{
+    margin: 2px;
+
+}
+
+
+}
+
+
+@media(max-width:500px){
+    .app-container {
+   
+    grid-template-columns: 80px 1fr;
+   
+}
+#recipe-container {
+    
+
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+   
+
+}
+.filterbtn{
+    max-width: 40px;
+    font-size: 0.5rem;
+}
+
+
+
+
+
 
 }
 
